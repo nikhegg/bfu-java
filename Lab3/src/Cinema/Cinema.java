@@ -11,8 +11,10 @@ public class Cinema {
         this.halls = new ArrayList<Hall>();
     }
 
-    public void createHall(ArrayList<Integer> rows) {
-        this.halls.add(new Hall(this, rows));
+    public Hall createHall(ArrayList<Integer> rows) {
+        Hall hall = new Hall(this.halls.size(), this, rows);
+        this.halls.add(hall);
+        return hall;
     }
 
     public ArrayList<Hall> getHalls() {

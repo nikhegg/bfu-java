@@ -5,8 +5,8 @@ import Lab3.src.ConsoleApp;
 import Lab3.src.Cinema.Cinema;
 import Lab3.src.Cinema.CinemaManager;
 
-public class AddHallCommand extends AbstractCommand {
-    public AddHallCommand() {
+public class CreateHallCommand extends AbstractCommand {
+    public CreateHallCommand() {
         super("add_hall", true);
         this.setDescription("Adds a hall to an existing cinema");
     }

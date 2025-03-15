@@ -4,15 +4,24 @@ import java.util.ArrayList;
 
 public class Hall {
     private Cinema cinema;
+    private long id;
     private ArrayList<Integer> rowSizes; // [10 мест, 5 мест, 12 мест] и т.д.
 
-    public Hall(Cinema cinema, ArrayList<Integer> rowSizes) {
+    public Hall(long id, Cinema cinema, ArrayList<Integer> rowSizes) {
         this.cinema = cinema;
+        this.id = id;
         this.rowSizes = rowSizes;
     }
 
     public Cinema getCinema() {
         return this.cinema;
+    }
+
+    public long getID() {
+        return this.id;
+    }
+    public void setID(long id) {
+        this.id = id;
     }
 
     public Integer getRowsAmount() {

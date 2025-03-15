@@ -28,17 +28,19 @@ public class ConsoleApp {
 
     public String input() {
         System.out.print("> ");
-        return this.scanner.next();
+        return this.scanner.nextLine();
     }
     public int inputInt() {
         System.out.print("> ");
-        return this.scanner.nextInt();
+        int result = this.scanner.nextInt();
+        this.scanner.nextLine(); // После nextInt остаётся \n как строка 💪💪💪
+        return result;
     }
 
     // Returns boolean that states whether the user is admin or not
     private boolean authorize() {
         System.out.println("Enter your username:");
-        String username = this.scanner.next();
+        String username = this.scanner.nextLine();
         while(!this.auth.userExists(username)) {
             System.out.println("User doesn't exist. Try another username");
             username = this.scanner.next();
@@ -47,7 +49,7 @@ public class ConsoleApp {
         boolean loggedIn = false;
         while(!loggedIn) {
             try {
-                String password = this.scanner.next();
+                String password = this.scanner.nextLine();
                 this.auth.login(username, password);
                 loggedIn = true;
             } catch (Exception e) {
@@ -55,9 +57,9 @@ public class ConsoleApp {
             }
         }
         StringBuilder loggedInMsg = new StringBuilder();
-        loggedInMsg.append("\n---Welcome back, ");
+        loggedInMsg.append("\n--- Welcome back, ");
         loggedInMsg.append(username);
-        loggedInMsg.append("!---");
+        loggedInMsg.append("! ---");
         System.out.println(loggedInMsg.toString());
         this.loggedAs = username;
 

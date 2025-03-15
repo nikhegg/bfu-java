@@ -1,15 +1,7 @@
 package Lab3.src;
 
 import java.util.ArrayList;
-import Lab3.src.Commands.AbstractCommand;
-import Lab3.src.Commands.AddHallCommand;
-import Lab3.src.Commands.CreateCinemaCommand;
-import Lab3.src.Commands.ExitCommand;
-import Lab3.src.Commands.FillTestDataCommand;
-import Lab3.src.Commands.HelpCommand;
-import Lab3.src.Commands.LogoutCommand;
-import Lab3.src.Commands.PrintCinemasCommand;
-import Lab3.src.Commands.StatusCommand;
+import Lab3.src.Commands.*;
 
 public class CommandHandler {
     protected ConsoleApp app;
@@ -18,13 +10,20 @@ public class CommandHandler {
     public CommandHandler(ConsoleApp app) {
         this.commands = new ArrayList<AbstractCommand>();
         this.app = app;
-
+        
         this.addCommand(new FillTestDataCommand());
+        // Creation
         this.addCommand(new CreateCinemaCommand());
-        this.addCommand(new AddHallCommand());
+        this.addCommand(new CreateHallCommand());
+        this.addCommand(new CreateFilmCommand());
+        this.addCommand(new CreateSessionCommand());
+        // Printing
         this.addCommand(new PrintCinemasCommand());
+        this.addCommand(new PrintFilmsCommand());
+        this.addCommand(new BuyTicketCommand());
+
+        // Other commands
         this.addCommand(new HelpCommand());
-        this.addCommand(new StatusCommand());
         this.addCommand(new LogoutCommand());
         this.addCommand(new ExitCommand());
     }
