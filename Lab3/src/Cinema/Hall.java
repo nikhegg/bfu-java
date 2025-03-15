@@ -3,10 +3,16 @@ package Lab3.src.Cinema;
 import java.util.ArrayList;
 
 public class Hall {
+    private Cinema cinema;
     private ArrayList<Integer> rowSizes; // [10 мест, 5 мест, 12 мест] и т.д.
 
-    public Hall(ArrayList<Integer> rowSizes) {
+    public Hall(Cinema cinema, ArrayList<Integer> rowSizes) {
+        this.cinema = cinema;
         this.rowSizes = rowSizes;
+    }
+
+    public Cinema getCinema() {
+        return this.cinema;
     }
 
     public Integer getRowsAmount() {

@@ -12,7 +12,7 @@ public class Cinema {
     }
 
     public void createHall(ArrayList<Integer> rows) {
-        this.halls.add(new Hall(rows));
+        this.halls.add(new Hall(this, rows));
     }
 
     public ArrayList<Hall> getHalls() {
