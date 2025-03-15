@@ -9,7 +9,7 @@ import Lab3.src.Cinema.Hall;
 public class PrintCinemasCommand extends AbstractCommand {
     public PrintCinemasCommand() {
         super("cinemas", true);
-        this.setDescription("Shows information about all cinemas");
+        this.setDescription("Shows information about all cinemas & their halls");
     }
 
     public void execute(ConsoleApp app) {

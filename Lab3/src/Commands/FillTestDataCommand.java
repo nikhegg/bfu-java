@@ -8,7 +8,7 @@ import Lab3.src.Cinema.CinemaManager;
 public class FillTestDataCommand extends AbstractCommand {
     public FillTestDataCommand() {
         super("test_fill", true);
-        this.setDescription("Closes the program");
+        this.setDescription("Creates testing cinemas with halls & film sessions");
     }
 
     public void execute(ConsoleApp app) {
