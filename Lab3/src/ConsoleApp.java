@@ -11,7 +11,7 @@ public class ConsoleApp {
     private String loggedAs;
 
     public ConsoleApp() {
-        this.scanner = new Scanner(System.in);
+        this.scanner = new Scanner(System.in, "UTF-8");
         this.auth = new Auth();
         this.cManager = new CinemaManager();
         this.commands = new CommandHandler(this);
@@ -24,6 +24,15 @@ public class ConsoleApp {
             System.out.println(e.getMessage());
             System.exit(0);
         }
+    }
+
+    public String input() {
+        System.out.print("> ");
+        return this.scanner.next();
+    }
+    public int inputInt() {
+        System.out.print("> ");
+        return this.scanner.nextInt();
     }
 
     // Returns boolean that states whether the user is admin or not
@@ -62,29 +71,12 @@ public class ConsoleApp {
     private void openUserPanel(boolean isAdmin) {
         System.out.println("Type help if you need the list of commands");
         while(true) {
-            System.out.print("> ");
-            String cmd = scanner.next().toLowerCase();
+            String cmd = this.input().toLowerCase();
             try {
                 this.commands.execute(cmd);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
-            // switch (cmd) {
-            //     case "status":
-            //         if(isAdmin) System.out.println("You are admin");
-            //         else System.out.println("You are NOT admin");
-            //         break;
-            //     case "logout":
-            //         this.auth.logout(this.loggedAs);
-            //         System.out.println("Successfully logged out from " + this.loggedAs + " account\n\n");
-            //         this.start();
-            //         return;
-            //     case "exit":
-            //         return;
-            //     default:
-            //         System.out.println("Unknown command");
-            //         break;
-            // }
         }
     }
 

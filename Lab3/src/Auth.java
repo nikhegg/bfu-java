@@ -2,8 +2,6 @@ package Lab3.src;
 
 import java.util.ArrayList;
 
-
-
 public class Auth {
     ArrayList<User> users;
 
